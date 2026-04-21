@@ -1,6 +1,6 @@
-export class RegisterUserDto{
-    fname: string;
-    lname: string
-    email: string;
-    password: string;
+export class RegisterUserDto {
+  fname!: string;
+  lname!: string;
+  email!: string;
+  password!: string;
 }
