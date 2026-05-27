@@ -4,17 +4,19 @@ import { RegisterUserDto } from './dto/registerUser.dto';
 import { UserService } from '../user/user.service';
 
 @Injectable()
-export class AuthService { 
-    constructor(private readonly userService: UserService   ) {}
-    async registerUser(registerUserDTO: RegisterUserDto) {
-        console.log('Registering user with data:', registerUserDTO);
+export class AuthService {
+  constructor(private readonly userService: UserService) {}
+  async registerUser(registerUserDTO: RegisterUserDto) {
+    console.log('Registering user with data:', registerUserDTO);
 
-        const saltRounds = 10;
-        const hash = await bcrypt.hash(registerUserDTO.password, saltRounds);
-        console.log('Hashed password:', hash);
+    const saltRounds = 10;
+    const hash = await bcrypt.hash(registerUserDTO.password, saltRounds);
+    console.log('Hashed password:', hash);
 
-
-        const userCreationResult = this.userService.createUser({...registerUserDTO, password: hash });
-        return userCreationResult;
-    }
+    const userCreationResult = this.userService.createUser({
+      ...registerUserDTO,
+      password: hash,
+    });
+    return userCreationResult;
+  }
 }

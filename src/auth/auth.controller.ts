@@ -4,10 +4,10 @@ import { RegisterUserDto } from './dto/registerUser.dto';
 
 @Controller('auth') //auth/register
 export class AuthController {
-    constructor(private readonly authService: AuthService) {}
-    @Post('register')
-    register(@Body() registerUserDTO: RegisterUserDto) {
-        const result = this.authService.registerUser(registerUserDTO);
-        return result;
-    }
+  constructor(private readonly authService: AuthService) {}
+  @Post('register')
+  register(@Body() registerUserDTO: RegisterUserDto) {
+    const result = this.authService.registerUser(registerUserDTO);
+    return result;
+  }
 }
