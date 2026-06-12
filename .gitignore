@@ -11,6 +11,8 @@ pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
+pnpm-lock.yaml
+pnpm-workspace.yaml
 
 # OS
 .DS_Store
